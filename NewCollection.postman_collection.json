@@ -57,7 +57,7 @@
 						"post"
 					]
 				},
-				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+				"description": "_Esta API es una Mock, no es una api real, se utiliza con fines demostrativos de una automatización de pruebas, se envía sólo datos dummy_"
 			},
 			"response": []
 		}
