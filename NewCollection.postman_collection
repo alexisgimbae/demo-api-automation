@@ -14,7 +14,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status Code es 200 Ok\", function () {",
+							"pm.test(\"Status Code es 200-Ok\", function () {",
 							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 							"});",
 							"",
