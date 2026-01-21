@@ -25,7 +25,7 @@
 							"pm.test(\"Validar nombre del cliente enviado en el Body que sea Alexis\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    console.log(jsonData.json.name);",
-							"    pm.expect(jsonData.json.name).to.eql(\"Alexis\");",
+							"    pm.expect(jsonData.json.nombreCliente).to.eql(\"Alexis\");",
 							"});"
 						],
 						"type": "text/javascript",
