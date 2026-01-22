@@ -18,7 +18,7 @@
 							"});",
 							"",
 							"pm.test(\"Validar que el endpoint responda en menos de 5 segundos\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"    pm.expect(pm.response.responseTime).to.be.below(50);",
 							"});",
 							"",
 							"pm.test(\"Validar nombre del cliente enviado en el Body que sea Alexis\", function () {",
@@ -32,6 +32,7 @@
 							"    console.log(jsonData.json.name);",
 							"    pm.expect(jsonData.json.apellidoCliente).to.eql(\"Gimenez\");",
 							"});",
+							"",
 							""
 						],
 						"type": "text/javascript",
