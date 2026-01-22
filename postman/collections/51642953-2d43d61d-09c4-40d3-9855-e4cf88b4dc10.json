@@ -33,6 +33,7 @@
 							"    pm.expect(jsonData.json.apellidoCliente).to.eql(\"Gimenez\");",
 							"});",
 							"",
+							"pm.test(\"validar response de la api\", function();",
 							""
 						],
 						"type": "text/javascript",
