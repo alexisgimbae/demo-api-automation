@@ -31,10 +31,7 @@
 							"    var jsonData = pm.response.json();",
 							"    console.log(jsonData.json.name);",
 							"    pm.expect(jsonData.json.apellidoCliente).to.eql(\"Gimenez\");",
-							"});",
-							"",
-							"",
-							""
+							"});"
 						],
 						"type": "text/javascript",
 						"packages": {},
