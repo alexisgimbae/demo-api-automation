@@ -5,15 +5,15 @@ on:
     branches:
       - main
     paths:
-      - 'NewCollection.postman_collection.json' # Tu colección
-      - '.github/workflows/api-tests.yml'        # El propio pipeline
+      # Ahora detectará cambios en cualquier archivo dentro de la carpeta de Postman
+      - 'postman/collections/**' 
+      - '.github/workflows/**'
   pull_request:
     branches:
       - main
     paths:
-      - 'NewCollection.postman_collection.json'
-      - '.github/workflows/api-tests.yml'
-  workflow_dispatch: # Mantiene el botón manual por si acaso
+      - 'postman/collections/**'
+  workflow_dispatch: # Botón manual activado
 
 jobs:
   newman-tests:
@@ -21,10 +21,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 # Versión más reciente
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4 # Versión más reciente
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
@@ -34,7 +34,8 @@ jobs:
 
       - name: Run Newman collection
         run: |
-          newman run postman/collections/51642953-2d43d61d-09c4-40d3-9855-e4cf88b4dc10.json -r htmlextra --reporter-htmlextra-export newman-report.html || true
+          # Usamos la ruta exacta donde Postman está guardando el JSON con ID
+          newman run "postman/collections/51642953-2d43d61d-09c4-40d3-9855-e4cf88b4dc10.json" -r htmlextra --reporter-htmlextra-export newman-report.html || true
 
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
