@@ -87,7 +87,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"nombreCliente\": \"Alexis\",\n    \"apellidoCliente\": \"Gimenez\",\n    \"nacionalidadCliente\": \"Paraguaya\"\n\n}",
+					"raw": "{\n\t\"nombreCliente\": \"Alexis\",\n    \"apellidoCliente\": \"Gimenez\",\n    \"nacionalidadCliente\": \"Paraguaya\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
