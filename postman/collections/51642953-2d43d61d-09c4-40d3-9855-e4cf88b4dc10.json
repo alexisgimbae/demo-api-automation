@@ -28,7 +28,7 @@
 							"});",
 							"",
 							"pm.test(\"Validar apellido del cliente enviado en el Body, que sea Gimenez\", function () {",
-							"   var jsonData = pm.response.json();",
+							"    var jsonData = pm.response.json();",
 							"    console.log(jsonData.json.name);",
 							"    pm.expect(jsonData.json.apellidoCliente).to.eql(\"Gimenez\");",
 							"});",
