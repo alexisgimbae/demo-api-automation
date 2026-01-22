@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "51642953-2d43d61d-09c4-40d3-9855-e4cf88b4dc10",
+		"name": "NewCollection.postman_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TC_001: MOCK API HTTPBING - REGISTRAR CLIENTE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2d380e90-b1ec-4282-b1f6-7f92baf8cc4e",
+						"exec": [
+							"pm.test(\"Status Code es 200 Ok\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							"",
+							"pm.test(\"Validar que el endpoint responda en menos de 5 segundos\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(50);",
+							"});",
+							"",
+							"pm.test(\"Validar nombre del cliente enviado en el Body que sea Alexis\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    console.log(jsonData.json.name);",
+							"    pm.expect(jsonData.json.nombreCliente).to.eql(\"Alexis\");",
+							"});",
+							"",
+							"pm.test(\"Validar apellido del cliente enviado en el Body, que sea Gimenez\", function () {",
+							"   var jsonData = pm.response.json();",
+							"    console.log(jsonData.json.name);",
+							"    pm.expect(jsonData.json.apellidoCliente).to.eql(\"Gimenez\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "51642953-89996982-bba0-4634-8260-a3daad53f680",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "payload",
+							"value": "{}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nombreCliente\": \"Alexis\",\n    \"apellidoCliente\": \"Gimenez\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://httpbin.org/post",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				},
+				"description": "_Esta API es una Mock, no es una api real, se utiliza con fines demostrativos de una automatización de pruebas, se envía sólo datos dummy_"
+			},
+			"response": []
+		}
+	]
+}
