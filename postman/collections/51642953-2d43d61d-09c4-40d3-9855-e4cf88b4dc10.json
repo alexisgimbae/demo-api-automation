@@ -23,7 +23,7 @@
 							"",
 							"pm.test(\"Validar nombre del cliente enviado en el Body que sea Alexis\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    console.info(jsonData.json.nombreCliente);",
+							"    console.assert(jsonData.json.nombreCliente);",
 							"    pm.expect(jsonData.json.nombreCliente).to.eql(\"Alexis\");",
 							"});",
 							"",
